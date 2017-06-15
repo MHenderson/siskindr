@@ -1,3 +1,15 @@
-all_weeks <- rbind(week28, week29)
+post <- data.frame(
+  week = c(1:30),
+  length = c(9, 18, 26, 22, NA, 17, NA, NA, NA, 41, 50, 57, 47, 61, 62, 60, 64, 66, 67, 75, 67, NA, NA, 67, 73, 93, 105, 93, 80, 78)
+)
 
-devtools::use_data(all_weeks)
+post_complete <- post[complete.cases(post), ]
+
+urls <- paste0("data-raw/week", post_complete$week, ".html")
+
+htmls <- purrr::map(urls, xml2::read_html)
+
+all_weeks <- purrr::pmap_df(list(htmls, post_complete$length, post_complete$week), siskindr::scrape_list)
+
+devtools::use_data(all_weeks, overwrite = TRUE)
+
