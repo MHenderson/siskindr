@@ -12,4 +12,3 @@ htmls <- purrr::map(urls, xml2::read_html)
 all_weeks <- purrr::pmap_df(list(htmls, post_complete$length, post_complete$week), siskindr::scrape_list)
 
 devtools::use_data(all_weeks, overwrite = TRUE)
-
