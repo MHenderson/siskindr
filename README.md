@@ -1,12 +1,9 @@
----
-output: github_document
----
-
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-
-
 
 # siskindr
+
+R data package of Amy Siskind's Weekly Authoritarianism List https://medium.com/@Amy_Siskind
+
+See http://rpubs.com/mhenderson/287527 for a demonstration.
 
 ## Installation
 
