@@ -2,9 +2,11 @@
 
 # siskindr
 
+Experts in authoritarianism advise to keep a list of things subtly changing around you, so you’ll remember.
+
 R data package of Amy Siskind's Weekly Authoritarianism List https://medium.com/@Amy_Siskind
 
-See http://rpubs.com/mhenderson/287527 for a demonstration.
+See http://rpubs.com/mhenderson/287527 for a demo app.
 
 ## Installation
 
