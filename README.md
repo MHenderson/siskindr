@@ -28,25 +28,31 @@ devtools::install_github("MHenderson/siskindr")
 
 ```r
 library(dplyr)
+library(ggplot2)
+library(hrbrthemes)
 library(siskindr)
 
 all_weeks %>%
   group_by(domain) %>%
   summarise(count = length(text)) %>%
-  top_n(10)
-#> Selecting by count
-#> # A tibble: 10 × 2
-#>            domain count
-#>             <chr> <int>
-#> 1             cnn    93
-#> 2              go    35
-#> 3         nbcnews    50
-#> 4         nytimes   151
-#> 5        politico    79
-#> 6     theguardian    35
-#> 7         thehill   119
-#> 8         twitter   220
-#> 9  washingtonpost   200
-#> 10            wsj    58
+  top_n(20) %>%
+  ggplot(aes(x = reorder(domain, count), y = count, fill = domain)) +
+    geom_bar_interactive(aes(tooltip = count), stat = "identity") +
+    theme_ipsum_rc() +
+    coord_flip() +
+    labs(
+      title = "Experts in authoritarianism advise to\n keep a list of things subtly changing\n around you, so you’ll remember.",
+      subtitle = "Most popular sources",
+      caption = "https://medium.com/@Amy_Siskind",
+      y = "Number of list items",
+      x = ""
+    ) +
+    guides(fill = FALSE) +
+    theme(
+      plot.title = element_text(size = 18),
+      plot.subtitle = element_text(size = 12)
+    )
 ```
+
+![plot of chunk example](README-example-1.png)
 
