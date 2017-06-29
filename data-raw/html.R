@@ -28,12 +28,11 @@ urls <- c(
   "https://medium.com/@Amy_Siskind/week-27-experts-in-authoritarianism-advise-to-keep-a-list-of-things-subtly-changing-around-you-so-cd6be88c85b7",
   "https://medium.com/@Amy_Siskind/week-28-experts-in-authoritarianism-advise-to-keep-a-list-of-things-subtly-changing-around-you-so-b772e6b7f47d",
   "https://medium.com/@Amy_Siskind/week-29-experts-in-authoritarianism-advise-to-keep-a-list-of-things-subtly-changing-around-you-so-c9e9f26fc799",
-  "https://medium.com/@Amy_Siskind/week-30-experts-in-authoritarianism-advise-to-keep-a-list-of-things-subtly-changing-around-you-so-9705fea03cc9"
+  "https://medium.com/@Amy_Siskind/week-30-experts-in-authoritarianism-advise-to-keep-a-list-of-things-subtly-changing-around-you-so-9705fea03cc9",
+  "https://medium.com/@Amy_Siskind/week-31-experts-in-authoritarianism-advise-to-keep-a-list-of-things-subtly-changing-around-you-so-dd293e0dd49b",
+  "https://medium.com/@Amy_Siskind/week-32-experts-in-authoritarianism-advise-to-keep-a-list-of-things-subtly-changing-around-you-so-252680d31be6"
 )
 
-filenames <- paste0("data-raw/week", 1:30, ".html")
+filenames <- paste0("data-raw/html/week", 1:32, ".html")
 
-library(curl)
-library(purrr)
-
-map2(urls, filenames, curl::curl_download)
+purrr::map2(urls, filenames, curl::curl_download)
