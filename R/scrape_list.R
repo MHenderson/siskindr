@@ -12,7 +12,7 @@ scrape_list <- function(list_html, list_length, week) {
     rvest::html_attr("href")
 
   links_per_item <- list_items %>%
-    purrr::map(purrr::compose(length, purrr::partial(html_nodes, css = "a"))) %>%
+    purrr::map(purrr::compose(length, purrr::partial(rvest::html_nodes, css = "a"))) %>%
     as.numeric()
 
   data.frame(
