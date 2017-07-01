@@ -13,6 +13,8 @@ R data package of Amy Siskind's Weekly Authoritarianism List https://medium.com/
 
 See http://rpubs.com/mhenderson/287951 for a demo app.
 
+Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
+
 ## Installation
 
 You can install siskindr from github with:
@@ -37,7 +39,7 @@ all_weeks %>%
   group_by(week) %>%
   summarise(count = length(text)) %>%
   ggplot(aes(x = week, y = count)) +
-    hrbrthemes::theme_ipsum_rc(base_size = 14, ticks = F) +
+    theme_ipsum_rc(base_size = 14, ticks = F) +
     geom_bar(width = 0.25, fill = "gray", stat = "identity") +
     scale_y_continuous(breaks = seq(0, 120, 10)) +
     geom_hline(yintercept = seq(0, 120, 5), col = "white", lwd = 1) +
