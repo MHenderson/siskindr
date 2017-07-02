@@ -1,3 +1,4 @@
+#' @importFrom magrittr %>%
 #' @export
 scrape_list <- function(list_html, list_length, week) {
 
