@@ -1,4 +1,13 @@
+#' Scrape the contents of a Medium post
+#'
+#' @param list_html HTML string of post.
+#' @param list_length Number of items in the post.
+#' @param week Week number of the post.
+#'
+#' @return Data frame of links with text and week numbers.
+#'
 #' @importFrom magrittr %>%
+#'
 #' @export
 scrape_list <- function(list_html, list_length, week) {
 
